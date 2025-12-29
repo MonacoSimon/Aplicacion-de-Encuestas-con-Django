@@ -1,6 +1,6 @@
 # Polls App – Django
 
-Este proyecto es mi **primer proyecto desarrollado con Django**, realizado siguiendo la **documentación oficial de Django** y adaptado con mejoras propias.
+Este proyecto es mi **primer proyecto desarrollado con Django**, siguiendo la **documentación oficial de Django** y adaptado con mejoras propias.
 
 La aplicación implementa un sistema básico de **encuestas (polls)**, utilizando:
 - Django (backend)
@@ -52,21 +52,32 @@ Verificar versiones:
 python --version
 pip --version
 
-### 1. Clonar el repositorio y usar el script de descarga
+Instalación y ejecución
 
-```bash
+    Clonar el repositorio:
+
 git clone https://github.com/MonacoSimon/Aplicacion-de-Encuestas-con-Django.git
 cd Aplicacion-de-Encuestas-con-Django
-#crear entorno virtual
+
+    Crear y activar un entorno virtual:
+
+    En Linux/macOS:
+
 python3 -m venv venv
 source venv/bin/activate
-# en windows
+
+    En Windows (PowerShell):
+
+python -m venv venv
 venv\Scripts\Activate.ps1
-#instalar dependencias
+
+    Instalar dependencias:
+
 pip install --upgrade pip
 pip install -r requirements.txt
 
-#crear base de datos si usa postgresql, si usa sqlite no hacer nada
+    Configurar la base de datos (opcional, solo si usás PostgreSQL). Editar mysite/settings.py:
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -78,15 +89,38 @@ DATABASES = {
     }
 }
 
+Si usás SQLite, no es necesario modificar nada.
 
-#aplicar migraciones
+    Aplicar migraciones:
+
 python manage.py migrate
-#crear superusuario
+
+    Crear un superusuario (opcional, para acceder al panel de administración):
+
 python manage.py createsuperuser
 
-# ejecutar el servidor
+    Ejecutar el servidor de desarrollo:
+
 python manage.py runserver
-abir la url en el navegador http://127.0.0.1:8000/
 
+    Abrir la aplicación en el navegador:
 
+http://127.0.0.1:8000/
 
+Uso
+
+    Acceder a la página principal para ver las encuestas disponibles.
+
+    Hacer clic en una encuesta para ver las opciones de votación.
+
+    Votar y consultar los resultados en tiempo real.
+
+    Administrar preguntas y opciones desde el panel de administración de Django (/admin).
+
+Notas
+
+    Este proyecto utiliza Bootstrap 5 mediante CDN para estilos rápidos y responsivos.
+
+    Todo el desarrollo se realizó dentro de un entorno virtual para mantener las dependencias aisladas.
+
+    La aplicación sirve como ejemplo para comprender el flujo MVT de Django, la gestión de modelos y la integración de frontend y backend.
